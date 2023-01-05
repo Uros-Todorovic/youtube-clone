@@ -4,6 +4,7 @@ import { darkTheme, lightTheme } from './utils/Theme';
 
 import { Menu, Navbar } from './components/index';
 import { Home, Video } from './pages/index';
+import SignIn from './pages/SignIn';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -34,6 +35,7 @@ function App() {
 							<Routes>
 								<Route path="/">
 									<Route index element={<Home />} />
+									<Route path="signin" element={<SignIn />} />
 									<Route path="video">
 										<Route path=":id" element={<Video />} />
 									</Route>
