@@ -163,7 +163,8 @@ const Video = () => {
         <Card type="small"/>
         <Card type="small"/>
         <Card type="small"/>        
-        <Card type="small"/>
+        <Card type="small"/>,
+        
         <Card type="small"/>
         <Card type="small"/>        
         <Card type="small"/>
