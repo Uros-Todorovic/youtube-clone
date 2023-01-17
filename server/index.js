@@ -21,10 +21,20 @@ const connect = () => {
 		});
 };
 
+app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/videos', videoRoutes);
+app.use((err, req, res, next) => {
+	const status = err.status || 500;
+	const message = err.message || 'Something wrong';
+	return res.status(status).json({
+		success: false,
+		status,
+		message,
+	});
+});
 
 app.listen(8800, () => {
 	console.log('Server is listening on port 8800');
