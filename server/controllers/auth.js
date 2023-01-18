@@ -26,12 +26,14 @@ export const signin = async (req, res, next) => {
 
 		const token = jwt.sign({ id: user._id }, process.env.JWT_KEY);
 
+		const { password, ...userProperties } = user._doc;
+
 		res
 			.cookie('access_token', token, {
 				httpOnly: true,
 			})
 			.status(200)
-			.json(user);
+			.json(userProperties);
 	} catch (error) {
 		next(error);
 	}
