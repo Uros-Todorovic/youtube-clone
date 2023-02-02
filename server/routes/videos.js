@@ -34,6 +34,6 @@ router.get('/trend', trend);
 router.get('/random', random);
 
 // Subscibed
-router.get('/sub', subscribed);
+router.get('/sub', verifyToken, subscribed);
 
 export default router;
