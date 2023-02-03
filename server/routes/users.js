@@ -19,9 +19,9 @@ router.put('/subscribe/:id', verifyToken, subscribe);
 router.put('/unsubscribe/:id', verifyToken, unsubscribe);
 
 // Like a Video
-router.put('/like/:id', verifyToken, like);
+router.put('/like/:videoId', verifyToken, like);
 
 // Dislike a Video
-router.put('/dislike/:id', verifyToken, dislike);
+router.put('/dislike/:videoId', verifyToken, dislike);
 
 export default router;
